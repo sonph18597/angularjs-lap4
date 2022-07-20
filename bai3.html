@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="info">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Mark</th>
+                        
+                    </tr>
+                </thead>
+                <tbody ng-repeat = 'student in students'>
+                    <tr>
+                        <th> <img src="{{student.image}}" width="100px" alt=""></th>
+                        <th>{{student.name}}</th>
+                        <th>{{student.age}}</th>
+                        <th>{{student.gender}}</th>
+                        <th>{{student.mark}}</th>
+                    </tr>
+                    <!-- <tr>
+                        <th> <img src="{{students[1].image}}" width="100px" alt=""></th>
+                        <th>{{students[1].name}}</th>
+                        <th>{{students[1].age}}</th>
+                        <th>{{students[1].gender}}</th>
+                        <th>{{students[1].mark}}</th>
+                    </tr>
+                    <tr>
+                        <th> <img src="{{students[2].image}}" width="100px" alt=""></th>
+                        <th>{{students[2].name}}</th>
+                        <th>{{students[2].age}}</th>
+                        <th>{{students[2].gender}}</th>
+                        <th>{{students[2].mark}}</th>
+                    </tr> -->
+                </tbody>
+            </table>
+            
+            
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    
+    <script>
+        const app = angular.module('myApp',[])
+        app.controller('info',function ($scope){
+            $scope.students = [
+                {
+                    name : 'nguyen van a',
+                    age : '18',
+                    image : './image/4.png',
+                    gender : 'nam',
+                    mark : '10'
+                },
+                {
+                    name : 'nguyen van b',
+                    age : '20',
+                    image : './image/4.png',
+                    gender : 'nam',
+                    mark : '9'
+                },
+                {
+                    name : 'nguyen van c',
+                    age : '17',
+                    image : './image/4.png',
+                    gender : 'nam',
+                    mark : '8'
+                },
+            ]
+        
+        })
+
+    </script>
+    
+</body>
+</html>

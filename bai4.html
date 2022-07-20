@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="hcn">
+            <label for="">chieu dai : </label><input type="text" ng-model="cd">
+            <label for="">chieu rong : </label><input type="text" ng-model="cr">
+            <br>
+            <br>
+            <label for="">chu vi : </label><input type="text" value="{{cv}}">
+            <label for="">dien tich : </label><input type="text" value="{{dt}}">
+            <br>
+            <br>
+            <button ng-click="calculate()">Calculate</button>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    
+    <script>
+        const app = angular.module('myApp',[])
+        app.controller('hcn',function ($scope) {
+            $scope.cd = ""
+            $scope.cr = ""
+            $scope.calculate = function (){
+                const a = parseFloat($scope.cd)
+                const b = parseFloat($scope.cr)
+                $scope.cv = (a + b)*2;
+                $scope.dt = a * b
+            }
+        })
+    </script>
+</body>
+</html>
